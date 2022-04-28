@@ -1,25 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <meta name="baidu-site-verification" content="code-zVh15bKvoe"/>
     <meta charset="UTF-8">
-    <meta name="keywords" content="哈德森的知识库">
-    <title>哈德森的知识库</title>
-    <--<link rel="icon" href="icon.svg" type="image/x-icon">-->
+    <meta name="keywords" content="在线播放器">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线播放器</title>
     <style>
-        div{
-            position : absolute;
-            width : 100%;
-            height : 99.5%;
+        #grad1 {
+            height: 100rem;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(135deg, #583230 10%, #2c1930 100%);
         }
-        *{
-            margin : 0;
-            padding : 0;
+
+        h1 {
+            text-shadow: 5px 5px 5px #9198e5;
+            text-align: center;
+            color: #ccc;
+        }
+
+        .iframe {
+
+        body {
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #EFEFF0;
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            border-radius: 5px;
+        }
+
+        }
         }
     </style>
 </head>
-<body>
-<div>
-    <iframe src="http://124.221.150.119:8090/" style="width: 99.5%;height: 101%;position: absolute;margin: -0.5% 0% -0.5% 0%;"/>
-</div>
+<body id="grad1">
+<h1>在线播放器</h1>
+<iframe marginheight=0 marginwidth=0 frameborder=0 width=100% style="overflow-x:hidden;"
+        height=100% scrolling=auto src="https://movie.xhxjgogo.tk/" name=showmain id=showmain onload="resize();">不能正常显示
+</iframe>
 </body>
 </html>
+<script language="javascript">
+    var iframeids = ["showmain"];
+    var iframehide = "yes";
+
+    function dyniframesize() {
+        var dyniframe = new Array();
+        for (i = 0; i < iframeids.length; i++) {
+
+            if (document.getElementById) {
+                dyniframe[dyniframe.length] = document.getElementById(iframeids[i]);
+                if (dyniframe[i] && !window.opera) {
+                    dyniframe[i].style.display = "block";
+                    if (dyniframe[i].contentDocument && dyniframe[i].contentDocument.body.offsetHeight) {
+                        dyniframe[i].height = dyniframe[i].contentDocument.body.offsetHeight;
+                    } else {
+                        if (dyniframe[i].Document && dyniframe[i].Document.body.scrollHeight) {
+                            dyniframe[i].height = dyniframe[i].Document.body.scrollHeight;
+                        }
+                    }
+                }
+            }
+            if ((document.all || document.getElementById) && iframehide == "no") {
+                var tempobj = document.all ? document.all[iframeids[i]] : document.getElementById(iframeids[i]);
+                tempobj.style.display = "block";
+            }
+        }
+    }
+
+    function resize() {
+        dyniframesize();
+        parent.dyniframesize();
+    }
+
+    if (window.addEventListener) {
+        window.addEventListener("load", dyniframesize, false);
+    } else {
+        if (window.attachEvent) {
+            window.attachEvent("onload", dyniframesize);
+        } else {
+            window.onload = dyniframesize;
+        }
+    }
+</script>
